@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block page_title %}Home{% endblock %}
+{% block content %}
+{% if articles %}
+{% for article in (articles_page.object_list if articles_page else articles) %}
+<div class="row">
+  <div class="col-md-12">
+    <div class="photo-post">
+      <div class="photo-post-content">
+        <center><img src="{{ article.image }}" class="img-thumbnail" /></center></div>
+      <h2 class="photo-post-title text-center">{{ article.title }} <small><a href="{{ SITEURL }}/{{ article.url }}"><i class="fa fa-link"></i></a></small></h2>
+    </div>
+  </div>
+</div>
+<!-- /.photo-post -->
+{% endfor %}
+{%endif%}
+
+{% if articles_page and articles_paginator.num_pages > 1 %}
+<nav>
+  <ul class="pager">
+    {% if articles_page.has_previous() %}
+    {% set num = articles_page.previous_page_number() %}
+    <li class="previous"><a href="{{ SITEURL }}/{{ page_name }}{{ num if num > 1 else '' }}.html" class="grey-anchor"><i class="fa fa-arrow-left fa-3x"></i></a></li>
+    {% else %}
+    <li class="previous hidden"><a href="#" class="grey-anchor"><i class="fa fa-arrow-left fa-3x"></i></a></li>
+    {% endif %}
+    {% if articles_page.has_next() %}
+    <li class="next"><a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.next_page_number() }}.html" class="grey-anchor"><i class="fa fa-arrow-right fa-3x"></i></a></li>
+    {% else %}
+    <li class="next hidden"><a href="#" class="grey-anchor"><i class="fa fa-arrow-right fa-3x"></i></a></li>
+    {% endif %}
+  </ul>
+</nav>
+{% endif %}
+
+{% endblock %}

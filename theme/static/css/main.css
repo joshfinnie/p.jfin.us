@@ -1,0 +1,40 @@
+body {
+  background-color: #cccccc;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  max-height: 650px;
+}
+
+.container {
+  width: auto;
+  max-width: 1170px;
+  font-size: 1.25em;
+}
+
+.topper {
+  background-color: #222222;
+  margin-bottom: 25px;
+}
+
+.masthead {
+  color: #cccccc;
+}
+
+.grey-anchor {
+  color: #999999;
+}
+
+.photo-post-pagination-right {
+  display: block;
+  width: 40px;
+  position: absolute;
+  right: 0;
+}
+
+.photo-post-pagination-left {
+  position: absolute;
+  left: 0;
+}

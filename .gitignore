@@ -1,0 +1,9 @@
+.DS_Store
+.ropeproject
+.venv
+cache
+output
+
+*.pyc
+*.pid
+

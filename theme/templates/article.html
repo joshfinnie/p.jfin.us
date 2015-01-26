@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block page_title %}Home{% endblock %}
+{% block content %}
+<div class="row">
+  <div class="col-md-12">
+    <div class="photo-post">
+      <div class="photo-post-content center">
+        <center><img src="{{ article.image }}" class="img-thumbnail" /></center>
+      </div>
+      <h2 class="photo-post-title text-center">{{ article.title }}</h2>
+      <p class="text-center">{{ article.author }} | {{ article.date.strftime('%B %d, %Y') }}</p>
+    </div>
+  </div>
+</div>
+<!-- /.photo-post -->
+{% endblock %}
