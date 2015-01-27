@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block page_title %}Home{% endblock %}
+{% block header_title %}Home{% endblock %}
 {% block content %}
 {% if articles %}
 {% for article in (articles_page.object_list if articles_page else articles) %}
@@ -7,8 +7,8 @@
   <div class="col-md-12">
     <div class="photo-post">
       <div class="photo-post-content">
-        <center><img src="{{ article.image }}" class="img-thumbnail" /></center></div>
-      <h2 class="photo-post-title text-center">{{ article.title }} <small><a href="{{ SITEURL }}/{{ article.url }}"><i class="fa fa-link"></i></a></small></h2>
+        <center><img src="{{ SITEURL }}/assets/images/{{ article.slug }}.jpg" class="img-thumbnail" /></center></div>
+      <h2 class="photo-post-title text-center">{{ article.title }} <small><a href="{{ SITEURL }}/{{ article.url }}" title="permalink"><i class="fa fa-link"></i></a></small></h2>
     </div>
   </div>
 </div>

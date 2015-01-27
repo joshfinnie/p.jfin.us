@@ -1,0 +1,3 @@
+title: About
+
+I am Josh Finnie; I like to take photos...
